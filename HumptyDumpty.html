@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Humpty Dumpty Animation</title>
+    <!-- Boostrap Include -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <!-- jQuery Include -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <style>
+        .character {
+            position: absolute;
+            background-size: cover;
+        }
+
+        body{
+            background: url("img/wall.png");
+            background-size: cover;
+        }
+
+
+        #humpty {
+            background: url("img/humpty.png");
+            left: 50%;
+            margin-left: -50px;
+        }
+        #wall {
+            background: url("img/wall.png");
+            left: 50px;
+        ;
+        }
+
+
+        #horse1 {
+            background: url("img/horse1.png");
+            left: 50px;
+            position: absolute;
+
+        }
+
+
+        #horse2 {
+            width: 100px;
+            height: 100px;
+            background: url("img/horse2.png");
+            left: 150px;
+        }
+
+
+        #man1 {
+            width: 100px;
+            height: 100px;
+            background: url('img/man1.png');
+            right: 50px;
+        }
+
+
+        #man2 {
+            width: 100px;
+            height: 100px;
+            background: url('img/man2.jpg');
+            right: 150px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <div class="row">
+        <div class="col-12">
+            <div id="humpty" class="character"></div>
+            <div id="wall"></div>
+            <div id="horse1" class="character"></div>
+            <div id="horse2" class="character"></div>
+            <div id="man1" class="character"></div>
+            <div id="man2" class="character"></div>
+        </div>
+    </div>
+
+</div>
+
+
+
+<script>
+
+    $(document).ready(function(){
+        $("#humpty").click(function(){
+            $("#humpty").animate({
+                top: '+=150px',
+            });
+            $("#man1").animate({
+                top: '-=150px',
+                left: '+=300px',
+
+            });
+            $("#man2").animate({
+                top: '-=150px',
+                left: '+=300px',
+
+            });
+            $("#horse1").animate({
+                top: '-=150px',
+                left: '+=300px',
+
+            });
+            $("#horse2").animate({
+                top: '-=150px',
+                left: '+=300px',
+
+            });
+            // Animate the horses and men towards Humpty Dumpty
+            $('#horse1, #horse2, #man1, #man2').animate({
+                left: $('#humpty').position().left,
+                top: $('#humpty').position().top + 50,
+            }, 2000);
+        });
+    });
+
+
+
+</script>
+
+
+</body>
+</html>
+
+
