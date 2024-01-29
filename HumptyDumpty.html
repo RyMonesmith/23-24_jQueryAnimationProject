@@ -9,114 +9,169 @@
 
     <!-- jQuery Include -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+    Humpty Dumpty sat on a wall; Humpty Dumpty had a great fall; All the king's horses and all the king's men; Couldn't put Humpty together again.
+
     <style>
-        .character {
-            position: absolute;
-            background-size: cover;
-        }
-
-        body{
-            background: url("img/wall.png");
-            background-size: cover;
-        }
-
 
         #humpty {
-            background: url("img/humpty.png");
-            left: 50%;
-            margin-left: -50px;
+            width: 100px;
+            height: 100px;
+            position: absolute;
+            left: 700px;
+            top: 700px;
         }
         #wall {
-            background: url("img/wall.png");
-            left: 50px;
-        ;
+            width: 800px;
+            height: 600px;
+            position: absolute;
+            left: 200px;
+            top: 200px;
         }
-
 
         #horse1 {
-            background: url("img/horse1.png");
-            left: 50px;
+            opacity: 0;
+            width: 200px;
+            height: 200px;
             position: absolute;
-
+            left: 1000px;
+            top: 650px;
         }
-
 
         #horse2 {
-            width: 100px;
-            height: 100px;
-            background: url("img/horse2.png");
-            left: 150px;
+            opacity: 0;
+            width: 200px;
+            height: 200px;
+            position: absolute;
+            left: 1200px;
+            top: 650px;
         }
-
 
         #man1 {
-            width: 100px;
-            height: 100px;
-            background: url('img/man1.png');
-            right: 50px;
+            opacity: 0;
+            width: 150px;
+            height: 150px;
+            position: absolute;
+            left: 1400px;
+            top: 650px;
         }
-
 
         #man2 {
+            opacity: 0;
+            width: 150px;
+            height: 150px;
+            position: absolute;
+            left: 1600px;
+            top: 650px;
+        }
+
+        #btn1 {
             width: 100px;
             height: 100px;
-            background: url('img/man2.jpg');
-            right: 150px;
+            position: absolute;
+            left: 100px;
+            top: 100px;
         }
+
+        #btn2 {
+            width: 100px;
+            height: 100px;
+            position: absolute;
+            left: 100px;
+            top: 200px;
+        }
+
+        #btn3 {
+            width: 100px;
+            height: 100px;
+            position: absolute;
+            left: 100px;
+            top: 300px;
+        }
+
     </style>
 </head>
 <body>
 
 <div class="container">
-
     <div class="row">
         <div class="col-12">
-            <div id="humpty" class="character"></div>
-            <div id="wall"></div>
-            <div id="horse1" class="character"></div>
-            <div id="horse2" class="character"></div>
-            <div id="man1" class="character"></div>
-            <div id="man2" class="character"></div>
+            <img src="img/wall.png" id="wall">
         </div>
     </div>
-
+    <div class="row">
+        <div class="col-12">
+            <img src="img/horse1.png" id="horse1">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <img src="img/horse2.png" id="horse2">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <img src="img/man1.png" id="man1">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <img src="img/man2.jpg" id="man2">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <img src="img/humpty.png" id="humpty">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <button type="button" id="btn1">animate 1</button>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <button type="button" id="btn2">animate 2</button>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <button type="button" id="btn3">animate 3</button>
+        </div>
+    </div>
 </div>
-
-
-
 <script>
 
     $(document).ready(function(){
-        $("#humpty").click(function(){
+        $("#btn1").click(function(){
             $("#humpty").animate({
-                top: '+=150px',
+                top: '-=400px',
             });
-            $("#man1").animate({
-                top: '-=150px',
-                left: '+=300px',
-
+        });
+        $("#btn2").click(function(){
+            $("#humpty").animate({
+                top: '+=400px',
             });
-            $("#man2").animate({
-                top: '-=150px',
-                left: '+=300px',
-
-            });
+        });
+        $("#btn3").click(function(){
             $("#horse1").animate({
-                top: '-=150px',
-                left: '+=300px',
-
+                left: '-=800',
+                opacity: '1',
             });
             $("#horse2").animate({
-                top: '-=150px',
-                left: '+=300px',
-
+                left: '-=800',
+                opacity: '1',
             });
-            // Animate the horses and men towards Humpty Dumpty
-            $('#horse1, #horse2, #man1, #man2').animate({
-                left: $('#humpty').position().left,
-                top: $('#humpty').position().top + 50,
-            }, 2000);
+            $("#man1").animate({
+                left: '-=800',
+                opacity: '1',
+            });
+            $("#man2").animate({
+                left: '-=800',
+                opacity: '1',
+            });
         });
+
     });
 
 
@@ -126,5 +181,3 @@
 
 </body>
 </html>
-
-
